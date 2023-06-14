@@ -1,0 +1,30 @@
+{
+  "name": "openchatbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "homepage": "chatbot.nicholijin.com",
+  "workspaces": [
+    "packages/*",
+    "openchatbot",
+    "front",
+    "components"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "build-force": "turbo run build --force",
+    "dev": "turbo run dev --parallel",
+    "start": "run-script-os",
+    "start:windows": "cd packages/server/bin && run start",
+    "start:default": "cd packages/server/bin && ./run start",
+    "clean": "npm exec -ws -- rimraf dist build",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint-fix": "yarn lint --fix",
+    "quick": "pretty-quick --staged",
+    "postinstall": "husky install"
+  },
+  "author": "",
+  "license": "ISC"
+}
